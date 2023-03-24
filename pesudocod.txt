@@ -1,0 +1,13 @@
+# imprinf():
+        define variadic function that have at least the character pointer for the formatted string and
+        one or more args.
+        send the character pointer to the argsnumber function
+        # argsnumber function()
+                check if the formatted string have formatted specifiers or escaped characters on it
+                if so the function return the number of them plus 1.
+                if not the function return 1
+        save the argsnumber function returned value to args variable
+        if the args is equal to 1 
+                loop over all the characters in the string and put it to the stdout
+        else
+                loop over and put to stdout all the characters till find a formatted specifier or an escaped character

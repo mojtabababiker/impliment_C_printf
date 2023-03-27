@@ -6,20 +6,23 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-/*
+
 int print_char(va_list args);
 int print_int(va_list args);
 int print_float(va_list args);
 int print_unsigned(va_list args);
 int print_str(va_list args);
-int print_pointer(va_list args);
+int print_ptr(va_list args);
 int print_percentage(va_list args);
+int print_s_hex(va_list args);
+int print_c_hex(va_list args);
 int print_long(va_list args);
 int print_short(va_list args);
-*/
+
 int print_nl();
 int print_cr();
 int print_np();

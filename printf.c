@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
         {
                 if (*formatted_str == '%')
                 {
-                        /*printed_chars += formatted_specifier(++formatted_str, args);*/
+                        printed_chars += formatted_specifier(++formatted_str, args);
                         ++formatted_str;
                 }
                 else if (*formatted_str == 92)
@@ -33,8 +33,8 @@ int _printf(const char *format, ...)
                 {
                         _putchar(*formatted_str);
                         printed_chars++;
+						formatted_str++;
                 }
-                formatted_str++;
         }
         return (printed_chars);
 }
@@ -46,12 +46,12 @@ int _printf(const char *format, ...)
  * @args: the current parameter in the va_list args variable
  * Return: number of printed char
 */
-/*int formatted_specifier(char *formatted_str, va_list args)
+int formatted_specifier(char *formatted_str, va_list args)
 {
         char specifier_chars[] = {'c','d','i','f', 'u', 's','p','%','l','h'};
         int (*print_specifier_func[])(va_list args) =   {print_char, print_int, print_int,
                                                 print_float, print_unsigned, print_str,
-                                                print_pointer, print_percentage,
+                                                print_ptr, print_percentage,
                                                 print_long, print_short
                                                 };
 
@@ -66,13 +66,13 @@ int _printf(const char *format, ...)
                         return (printed_chars);
                 }
         }
-        // if the formatted_str is not a formatting specifier, just print it
+        /* if the formatted_str is not a formatting specifier, just print it*/
        _putchar('%');
         printed_chars++;
         _putchar(*formatted_str);
         return (++printed_chars);
 }
-*/
+
 
 /**
  * escaped_specifier - check the escaped char and call the function

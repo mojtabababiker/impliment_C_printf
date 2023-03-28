@@ -48,11 +48,11 @@ int _printf(const char *format, ...)
 */
 int formatted_specifier(char *formatted_str, va_list args)
 {
-        char specifier_chars[] = {'c','d','i','f', 'u', 's','p','%','l','h'};
+        char specifier_chars[] = {'c','d','i','f', 'u', 's','p','%','l','h', 'x', 'X', 'o'};
         int (*print_specifier_func[])(va_list args) =   {print_char, print_int, print_int,
                                                 print_float, print_unsigned, print_str,
                                                 print_ptr, print_percentage,
-                                                print_long, print_short
+                                                print_long, print_short, print_s_hex, print_c_hex, print_octal
                                                 };
 
         int printed_chars = 0, i = 0;

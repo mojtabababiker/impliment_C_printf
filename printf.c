@@ -33,8 +33,8 @@ int _printf(const char *format, ...)
                 {
                         _putchar(*formatted_str);
                         printed_chars++;
+                        formatted_str++;
                 }
-                formatted_str++;
         }
         return (printed_chars);
 }
@@ -46,14 +46,14 @@ int _printf(const char *format, ...)
  * @args: the current parameter in the va_list args variable
  * Return: number of printed char
 */
-/*int formatted_specifier(char *formatted_str, va_list args)
+int formatted_specifier(char *formatted_str, va_list args)
 {
-        char specifier_chars[] = {'c','d','i','f', 'u', 's','p','%','l','h'};
-        int (*print_specifier_func[])(va_list args) =   {print_char, print_int, print_int,
-                                                print_float, print_unsigned, print_str,
-                                                print_pointer, print_percentage,
-                                                print_long, print_short
-                                                };
+        char specifier_chars[] = {'c','d','i','f', 'u', 's','p', 'x', 'X', 'o', 'b'};
+        int (*print_specifier_func[])(va_list args) = {print_char, print_int, print_int,
+                                                        print_float, print_unsigned, print_str,
+                                                        print_ptr, print_s_hex, print_c_hex,
+                                                        print_octal, print_binary
+                                                        };
 
         int printed_chars = 0, i = 0;
         
@@ -66,13 +66,25 @@ int _printf(const char *format, ...)
                         return (printed_chars);
                 }
         }
-        // if the formatted_str is not a formatting specifier, just print it
+        if (*formatted_str == 'l')
+        {
+                return (printed_chars + print_long(args, ++formatted_str));
+        }
+        else if (*formatted_str == 'h')
+        {
+                return (printed_chars + print_short(args, ++formatted_str));
+        }
+        else if (*formatted_str == '%')
+        {
+                return (printed_chars + _putchar('%'));
+        }
+        /* if the formatted_str is not a formatting specifier, just print it*/
        _putchar('%');
         printed_chars++;
         _putchar(*formatted_str);
         return (++printed_chars);
 }
-*/
+
 
 /**
  * escaped_specifier - check the escaped char and call the function

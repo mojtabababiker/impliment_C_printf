@@ -85,7 +85,7 @@ int print_short_octal(unsigned short num)
  * @num: unsigned short integer to wrote
  * Return: number of printed chars
 */
-int print_unsigned_short(unsigned short num)
+int print_short_unsigned(unsigned short num)
 {
         static int printed_chars = 0;
         if (num / 10 == 0)

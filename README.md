@@ -32,4 +32,4 @@
 
 ### main.h
 
-        Contains primarily header files and all the other requirements
+        Contains primarily header files and all the other requirements.

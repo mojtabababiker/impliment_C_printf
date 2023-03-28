@@ -39,28 +39,30 @@ int print_int(va_list args)
 }
 
 /**
- * print_float - write a floating point number to stdout
- * @args: va_list holding the current parameter of the function _printf, in this case
- *        holding floating point number
- * Return: number of wrote digits
+ * print_float - print function
+ * DESCRIPTION: a function that prints float numbers
+ * @args: arguments passed to the function to be printed
+ * @: number of printed characters
+ * Return: number of printed characters
  */
 int print_float(va_list args)
 {
-        int decimal_num, float_num;
-        
-        int printed_chars = 0;
-        float f = va_arg(args, double);
-        if (f < 0)
-        {
-                printed_chars += _putchar('-');
-                f = -f;
-        }
-        decimal_num = (int)f;
-        float_num = (f - decimal_num) * NUM_OF_FLOATING_POINT;
-        printed_chars += put_num((unsigned int)decimal_num);
-        printed_chars += _putchar('.');
-        printed_chars += put_num((unsigned int)float_num);
-        return (printed_chars);
+        float n = va_arg(args, double);
+	int i, printed_count = 0;
+	char str[20];
+
+	if (n < 0)
+	{
+		n = -n;
+		printed_count += _putchar('-');
+	}
+	sprintf(str, "%.6f", n);
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+	}
+	return (printed_count);
+
 }
 
 /**

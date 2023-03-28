@@ -85,7 +85,7 @@ int print_long_octal(unsigned long num)
  * @num: unsigned long integer to wrote
  * Return: number of printed chars
 */
-int print_unsigned_long(unsigned long num)
+int print_long_unsigned(unsigned long num)
 {
         static int printed_chars = 0;
         if (num / 10 == 0)

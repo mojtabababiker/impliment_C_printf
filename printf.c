@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
         {
                 if (*formatted_str == '%')
                 {
-                        /*printed_chars += formatted_specifier(++formatted_str, args);*/
+                        printed_chars += formatted_specifier(++formatted_str, args);
                         ++formatted_str;
                 }
                 else if (*formatted_str == 92)

@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+
 #define NUM_OF_FLOATING_POINT 1000000
 
 #include <unistd.h>
@@ -7,6 +8,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 
 int _putchar(char c);

@@ -85,5 +85,6 @@ int print_short(va_list args, char *format)
 			printed_chars += print_short_num(num2);
 			break;
 	}
+	++format;
 	return (printed_chars);
 }

@@ -1,21 +1,20 @@
-/**
- * write to stdout hexadecimal both in small and capital format,
- * octal numbers and integer formatted to binary
- */
-#include "main.h"
+#incluse "main.h"
 
 int print_num(unsigned int num);
+
 /**
- * print_c_hex - write to stdout unsigned number in HEXADECIMAL format
+ * print_c_hex - write to stdout number in HEXADESIMAL format
  * @args: va_list holds the current parameter of the _printf function,
  *        in this case unsigned integer
  * Return: number of printed chars
  */
 int print_c_hex(va_list args)
 {
-        unsigned int n = va_arg(args, unsigned int);
 	unsigned int temp;
-	int i = 0, j, printed_chars = 0;
+
+	unsigned int n = va_arg(args, unsigned int);
+
+	int i = 0, j = 0, printed_chars = 0;
 	char str[20] = {0};
 
 	while (n != 0)
@@ -33,6 +32,7 @@ int print_c_hex(va_list args)
 		}
 		n = n / 16;
 	}
+
 	if (i == 0)
 	{
 		str[i] = '0';
@@ -42,8 +42,9 @@ int print_c_hex(va_list args)
 	{
 		printed_chars += _putchar(str[j]);
 	}
-	return (printed_chars);     
+	return (printed_chars);
 }
+
 
 /**
  * print_s_hex - print function
@@ -55,9 +56,10 @@ int print_c_hex(va_list args)
  */
 int print_s_hex(va_list args)
 {
-        unsigned int n = va_arg(args, unsigned int);
 	unsigned int temp;
-	int i = 0, j, printed_chars = 0;
+
+	unsigned int n = va_arg(args, unsigned int);
+	int i = 0, j = 0, printed_chars = 0;
 	char str[20] = {0};
 
 	while (n != 0)
@@ -92,8 +94,8 @@ int print_s_hex(va_list args)
  */
 int print_octal(va_list args)
 {
-        unsigned int n = va_arg(args, unsigned int);
-	int i = 0, j, printed_chars = 0;
+	unsigned int n = va_arg(args, unsigned int);
+	int i = 0, j = 0, printed_chars = 0;
 	char str[20] = {0};
 
 	if (n == 0)
@@ -122,22 +124,24 @@ int print_octal(va_list args)
 */
 int print_binary(va_list args)
 {
-        unsigned int num = va_arg(args, unsigned int);
-        return (print_num(num));
+	unsigned int num = va_arg(args, unsigned int);
+
+	return (print_num(num));
 }
 
 /**
  * print_num - write integer number in binary format
  * @num: number to converted to binary and wrote it
- * Return number of printed chars
+ * Return: number of printed chars
 */
 int print_num(unsigned int num)
 {
-        static int printed_chars = 0;
-        if (num / 2 == 0)
-        {
-                return (_putchar(num + '0'));
-        }
-        printed_chars += print_num(num / 2);
-        return (printed_chars + _putchar(num % 2 + '0'));
+	static int printed_chars;
+
+	if (num / 2 == 0)
+	{
+		return (_putchar(num + '0'));
+	}
+	printed_chars += print_num(num / 2);
+	return (printed_chars + _putchar(num % 2 + '0'));
 }

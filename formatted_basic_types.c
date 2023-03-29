@@ -1,94 +1,96 @@
-/**
- * This Code is for writing the basic C data types, eg.., integer, char, string, plus printing '%'
- * using _putchar, and recursive functions to print integers and strings
-*/
-
 #include "main.h"
 
 int put_num(unsigned int n);
 
 /**
- * print_char - write to stdout a single character that will be provide by args list
- * @args: va_list holding the current parameter of the function, in this case holding
- *      a single char
- * Return: 1 if success, -1 other-wise, 0 means no char printed
+ * print_char - write to stdout a single character that will be provided by
+ *              va_list
+ * @args: va_list holding the current parameter of the function, in this case
+ *        holding a single character
+ * Return: number of printed chars, 1 in this case
  */
-
 int print_char(va_list args)
 {
-        char c = va_arg(args, int);
-        return (_putchar(c));
+	char c = va_arg(args, int);
+
+	return (_putchar(c));
 }
 
 /**
- * print_int - write an integer number to stdout
- * @args: va_list holding the current parameter of the function _printf, in this case
- *        holding an integer number
- * Return: number of wrote digits
+ * print_int - write to stdout an integer number provided by
+ *             va_list
+ * @args: va_list that holds the currrent parameter of the function_printf,
+ *         an integer number in this case
+ * Return: number of printed chars
  */
 int print_int(va_list args)
 {
-        int i = va_arg(args, int);
-        if (i < 0)
-        {
-                _putchar('-');
-                i = -i;
-                return (put_num((unsigned int)i) + 1);
-        }
-        return (put_num((unsigned int)i));
+	int i = va_arg(args, int);
+
+	if (i < 0)
+	{
+		_putchar('-');
+		i = -i;
+		return (put_num((unsigned int)i) + 1);
+	}
+	return (put_num((unsigned int)i));
 }
 
 /**
- * print_float - print function
- * DESCRIPTION: a function that prints float numbers
- * @args: arguments passed to the function to be printed
- * @: number of printed characters
- * Return: number of printed characters
+ * print_float - write to stdout a float number provided by
+ *               va_list
+ * @args: va_list that holds the current prameter of the function _printf,
+ *       a floating point number in this case
+ * Return: number of printed chars
  */
 int print_float(va_list args)
 {
-        float n = va_arg(args, double);
-	int i, printed_count = 0;
 	char str[20];
+
+	flaot n = va_arg(args, double);
+	int i = 0, printed_chars = 0;
 
 	if (n < 0)
 	{
 		n = -n;
-		printed_count += _putchar('-');
+		printed_chars += _putchar('-');
 	}
 	sprintf(str, "%.6f", n);
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0 ; str[i] != '\0' ; i++)
 	{
 		_putchar(str[i]);
+		printed_chars++;
 	}
-	return (printed_count);
-
+	return (printed_chars);
 }
 
 /**
- * print_unsigned - write unsigned number to stdout
- * @args: va_list holding the current parameter of the function _printf, in this case
- *        an unsigned number
+ * print_unsigned - write unsigned numbre to stdout
+ * @args: va_list holds the current parameter of the function _printf,
+ *       unsigned int in this case
  * Return: number of printed chars
  */
 int print_unsigned(va_list args)
 {
-        unsigned int i = va_arg(args, unsigned int);
-        return (put_num(i));
+	unsigned int i = va_arg(args, unsigned int);
+
+	return (put_num(i));
 }
+
 /**
- * put_num - write multi-digits integer to stdout
+ * put_num - write multi digits integer to stdout
  * @n: the integer to be wrote
- * Return: number of wrote digits
+ * Return: number of printed chars
  */
 int put_num(unsigned int n)
 {
-        static int printed_chars = 0;
-        if (n / 10 == 0)
-        {
-                return(_putchar(n + '0'));
-        }
-        printed_chars += put_num(n / 10);
-        printed_chars += _putchar((n % 10) + '0');
-        return (printed_chars);
+	static int printed_chars = 1;
+
+	if (n / 10 == 0)
+	{
+		return (_putchar(n + '0'));
+	}
+	printed_chars += put_num(n / 10);
+	printed_chars += _putchar((n % 10) + '0');
+	return (printed_chars - 1);
 }

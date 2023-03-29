@@ -33,5 +33,12 @@ int main(void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
+    len2 = _printf("Len in binary: [%b]\n", len);
+    _printf("len2 in long hexa: [%ltd]\n", len2);
+    _printf("len2 in long hexa: [%lod]\n", len2);
+    _printf("len2 in long hexa: [%lxd]\n", len2);
+
+
+    printf("len2 in long hexsa: [%lxd]\n", len2);
     return (0);
 }

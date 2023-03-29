@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 	int i = 0, printed_chars = 0;
 	char arry[6] = {'o', 'i', 'd', 'x', 'X', 'u'};
 
+	if (format == NULL)
+		return (0);
 	frmt_str = (char *)format;
 	va_start(args, format);
 	while (*frmt_str != '\0')

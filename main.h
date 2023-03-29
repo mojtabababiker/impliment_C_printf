@@ -31,14 +31,14 @@ int print_long_num(long num);
 int print_long_c_hex(unsigned long num);
 int print_long_s_hex(unsigned long num);
 int print_long_octal(unsigned long num);
-int print_long_unsigned(unsigned long num);
+int print_long_unsin(unsigned long num);
 
 int print_short(va_list args, char *format);
 int print_short_num( short num);
 int print_short_c_hex(unsigned short num);
 int print_short_s_hex(unsigned short num);
 int print_short_octal(unsigned short num);
-int print_short_unsigned(unsigned short num);
+int print_short_unsin(unsigned short num);
 
 int print_nl();
 int print_cr();

@@ -20,19 +20,8 @@ int print_str(va_list args)
                 str = "(null)";
         while (*str)
         {
-                printed_chars += print_char(*str);
+                printed_chars += _putchar(*str);
                 str++;
         }
         return (printed_chars);
-}
-
-/**
- * print_ptr - write to stdout pointer value
- * @args: va_list holding the current parameter of the _printf function, in
- *              this case a pointer
- * Return: number of printed chars
-*/
-int print_ptr(va_list args)
-{
-        return(0);
 }

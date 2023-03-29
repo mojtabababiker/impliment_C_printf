@@ -1,7 +1,4 @@
 #include <stdint.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <string.h>
 #include "main.h"
 /**
  * print_ptr - print function
@@ -40,5 +37,5 @@ int print_ptr(va_list args)
 		printed_count++;
 	}
 
-	return printed_count;
+	return (printed_count);
 }

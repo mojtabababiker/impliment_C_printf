@@ -37,10 +37,10 @@ int print_tab(void)
 }
 
 /**
- * print_vtab - print vertical tab
+ * print_vtap - print vertical tab
  * Return: number of printed chars
 */
-int print_vtab(void)
+int print_vtap(void)
 {
 	return (_putchar(11));
 }

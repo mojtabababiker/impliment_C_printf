@@ -3,6 +3,7 @@
 
 #define NUM_OF_FLOATING_POINT 1000000
 
+#include <limits.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <stddef.h>

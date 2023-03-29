@@ -4,6 +4,7 @@
  */
 #include "main.h"
 
+int print_num(unsigned int num);
 /**
  * print_c_hex - write to stdout unsigned number in HEXADECIMAL format
  * @args: va_list holds the current parameter of the _printf function,

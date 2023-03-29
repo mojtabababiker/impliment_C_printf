@@ -136,12 +136,12 @@ int print_binary(va_list args)
 */
 int print_num(unsigned int num)
 {
-	static int printed_chars;
+	static int printed_chars = 1;
 
 	if (num / 2 == 0)
 	{
 		return (_putchar(num + '0'));
 	}
 	printed_chars += print_num(num / 2);
-	return (printed_chars + _putchar(num % 2 + '0'));
+	return (printed_chars + _putchar(num % 2 + '0') - 1);
 }

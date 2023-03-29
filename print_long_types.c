@@ -77,7 +77,7 @@ int print_long_octal(unsigned long num)
 }
 
 /**
- * print_long_unsign - write to stdout unsigned
+ * print_long_unsin - write to stdout unsigned
  * long integer in decimal format
  * @num: unsigned long integer to wrote
  * Return: number of printed chars

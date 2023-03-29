@@ -78,7 +78,7 @@ int print_short_octal(unsigned short num)
 }
 
 /**
- * print_short_unsign - write to stdout unsigned
+ * print_short_unsin - write to stdout unsigned
  * short integer in decimal format
  * @num: unsigned short integer to wrote
  * Return: number of printed chars

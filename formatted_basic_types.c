@@ -65,7 +65,7 @@ int print_float(va_list args)
 }
 
 /**
- * print_unsigned - write unsigned numbre to stdout
+ * print_unsin - write unsigned numbre to stdout
  * @args: va_list holds the current parameter of the function _printf,
  *       unsigned int in this case
  * Return: number of printed chars

@@ -9,16 +9,16 @@
  */
 int print_ptr(va_list args)
 {
-	void* ptr = va_arg(args, void*);
+	void *ptr = va_arg(args, void*);
 	uintptr_t value = (uintptr_t)ptr;
 	int i, digit, printed_count = 0, zero = 0;
 	char c;
-	
+
 	putchar('0');
 	putchar('x');
 	printed_count += 2;
 
-	for (i = (sizeof(void*) * 2) - 1; i >= 0; i--)
+	for (i = (sizeof(void *) * 2) - 1; i >= 0; i--)
 	{
 		digit = (value >> (i * 4)) & 0xf;
 		if (digit == 0 && !zero)

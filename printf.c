@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	char arry[6] = {'o', 'i', 'd', 'x', 'X', 'u'};
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 	frmt_str = (char *)format;
 	va_start(args, format);
 	while (*frmt_str != '\0')

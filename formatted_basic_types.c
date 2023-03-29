@@ -47,7 +47,7 @@ int print_float(va_list args)
 {
 	char str[20];
 
-	flaot n = va_arg(args, double);
+	float n = va_arg(args, double);
 	int i = 0, printed_chars = 0;
 
 	if (n < 0)
@@ -70,7 +70,7 @@ int print_float(va_list args)
  *       unsigned int in this case
  * Return: number of printed chars
  */
-int print_unsigned(va_list args)
+int print_unsin(va_list args)
 {
 	unsigned int i = va_arg(args, unsigned int);
 

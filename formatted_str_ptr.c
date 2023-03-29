@@ -7,7 +7,7 @@
  *       function in this case array of chars
  * Return: number of printed chars
  */
-int print_str(va_lisr args)
+int print_str(va_list args)
 {
 	char *str;
 

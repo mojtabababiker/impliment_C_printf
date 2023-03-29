@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 		{
 			_putchar(*frmt_str);
 			printed_chars++;
-			frtm_str++;
+			frmt_str++;
 		}
 	}
 	return (printed_chars);
@@ -111,5 +111,13 @@ int escaped_specifier(char *formatted_str)
 	int printed_chars = 0;
 	int i = 0;
 /*int len = strlen(escaped_chars);*/
-	return (-1);
+	for (i = 0 ; i < 11 ; i++)
+	{
+		if (*formatted_str == escaped_chars[i])
+		{
+			return (printed_chars += print_escaped_func[i]());
+		}
+		formatted_str++;
+	}
+	return (printed_chars);
 }

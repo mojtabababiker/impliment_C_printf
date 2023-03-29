@@ -18,7 +18,7 @@ int _printf(const char *format, ...);
 int print_char(va_list args);
 int print_int(va_list args);
 int print_float(va_list args);
-int print_unsigned(va_list args);
+int print_unsin(va_list args);
 int print_str(va_list args);
 int print_ptr(va_list args);
 int print_s_hex(va_list args);

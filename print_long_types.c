@@ -82,7 +82,7 @@ int print_long_octal(unsigned long num)
  * @num: unsigned long integer to wrote
  * Return: number of printed chars
 */
-int print_long_unsign(unsigned long num)
+int print_long_unsin(unsigned long num)
 {
 	static int printed_chars;
 

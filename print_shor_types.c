@@ -83,7 +83,7 @@ int print_short_octal(unsigned short num)
  * @num: unsigned short integer to wrote
  * Return: number of printed chars
 */
-int print_short_unsign(unsigned short num)
+int print_short_unsin(unsigned short num)
 {
 	static int printed_chars;
 

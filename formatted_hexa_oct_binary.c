@@ -126,7 +126,7 @@ int print_binary(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
 
-	return (print_num(num));
+	return (print_num(num), 0);
 }
 
 /**
@@ -134,14 +134,13 @@ int print_binary(va_list args)
  * @num: number to converted to binary and wrote it
  * Return: number of printed chars
 */
-int print_num(unsigned int num)
+int print_num(unsigned int num, int prt_chr)
 {
-	static int printed_chars = 1;
-
 	if (num / 2 == 0)
 	{
-		return (_putchar(num + '0'));
+		return (_putchar(num + '0') + prt_chr);
 	}
-	printed_chars += print_num(num / 2);
-	return (printed_chars + _putchar(num % 2 + '0') - 1);
+	prt_chr = print_num((num / 2, prt_chr + 1));
+	_putchar(num % 2 + '0');
+	return (prt_chr);
 }

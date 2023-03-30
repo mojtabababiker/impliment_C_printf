@@ -1,6 +1,6 @@
 #include "main.h"
 
-int put_num(unsigned int n, int flag);
+int put_num(unsigned int n, int prt_chr);
 
 /**
  * print_char - write to stdout a single character that will be provided by
@@ -36,9 +36,9 @@ int print_int(va_list args)
 		_putchar('-');
 		j = -i;
 		printed_chars += put_num(j, 1);
-		return (printed_chars + 1);
+		return (printed_chars);
 	}
-	printed_chars += put_num(i, 1);
+	printed_chars += put_num(i, 0);
 	return (printed_chars);
 }
 
@@ -81,29 +81,23 @@ int print_unsin(va_list args)
 	unsigned int i = va_arg(args, unsigned int);
 	int printed_chars = 0;
 
-	printed_chars += put_num(i, 1);
+	printed_chars += put_num(i, 0);
 	return (printed_chars);
 }
 
 /**
  * put_num - write multi digits integer to stdout
  * @n: the integer to be wrote
- * @flag: flag used to reset the static variable
+ * @prt_chr: flag used to reset the static variable
  * Return: number of printed chars
  */
-int put_num(unsigned int n, int flag)
+int put_num(unsigned int n, int prt_chr)
 {
-	static int printed_chars = 1;
-
-	if (flag == 1)
-		printed_chars = 0;
 	if (n / 10 == 0)
 	{
-		_putchar(n + '0');
-		return (++printed_chars);
+		return (_putchar(n + '0') + prt_chr);
 	}
-	printed_chars +=  put_num(n / 10, 0);
-
-	printed_chars += _putchar((n % 10) + '0');
-	return (printed_chars);
+	prt_chr = put_num(n / 10, prt_chr + 1);
+	_putchar(n % 10 + '0');
+	return (prt_chr);
 }

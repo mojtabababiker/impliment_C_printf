@@ -1,6 +1,6 @@
 #include "main.h"
 
-int print_num(unsigned int num);
+int print_num(unsigned int num, int prt_char);
 
 /**
  * print_c_hex - write to stdout number in HEXADESIMAL format

@@ -101,7 +101,7 @@ int formatted_specifier(char *formatted_str, va_list args)
 		return (-1);
 
 	}
-g/* if the formatted_str is not a formatting specifier, just print it*/
+/* if the formatted_str is not a formatting specifier, just print it*/
 	_putchar('%');
 	printed_chars++;
 	_putchar(*formatted_str);

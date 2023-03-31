@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 /**
  * print_str - write to stdout array of chars to stdout
  * Description: write to stdout using the value of va_list
@@ -15,11 +16,14 @@ int print_str(va_list args)
 
 	str = va_arg(args, char *);
 	if (str == NULL)
+	{
 		str = "(null)";
-	while (*str)
+	}
+	while (*str != '\0')
 	{
 		printed_chars += _putchar(*str);
 		str++;
 	}
+
 	return (printed_chars);
 }

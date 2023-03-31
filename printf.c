@@ -26,6 +26,8 @@ int _printf(const char *format, ...)
 	{
 		if (*frmt_str == '%')
 		{
+			if (*(frmt_str + 1) == '\0')
+				return (-1);
 			printed_chars += formatted_specifier(++frmt_str, args);
 			if (*frmt_str == 'l' || *frmt_str == 'h')
 				for (i = 0 ; i < 6 ; i++)
@@ -95,11 +97,6 @@ int formatted_specifier(char *formatted_str, va_list args)
 	else if (*formatted_str == '%')
 	{
 		return (printed_chars + _putchar('%'));
-	}
-	else if (*formatted_str == '\0')
-	{
-		return (-1);
-
 	}
 /* if the formatted_str is not a formatting specifier, just print it*/
 	_putchar('%');

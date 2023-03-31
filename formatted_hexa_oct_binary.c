@@ -132,6 +132,7 @@ int print_binary(va_list args)
 /**
  * print_num - write integer number in binary format
  * @num: number to converted to binary and wrote it
+ * @prt_chr: number of printed chars
  * Return: number of printed chars
 */
 int print_num(unsigned int num, int prt_chr)

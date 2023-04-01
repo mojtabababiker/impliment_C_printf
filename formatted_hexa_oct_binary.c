@@ -133,7 +133,7 @@ int print_binary(va_list args)
 	unsigned int num = va_arg(args, unsigned int);
 	int printed_chars = 0;
 
-	printed_chars += put_num(num, 0);
+	printed_chars += print_num(num, 0);
 	return (printed_chars);
 }
 

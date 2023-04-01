@@ -94,6 +94,10 @@ int formatted_specifier(char *formatted_str, va_list args)
 	{
 		return (printed_chars + print_short(args, ++formatted_str));
 	}
+	else if (*formatted_str == 'S')
+	{
+		return (printed_chars + print_STR(args));
+	}
 	else if (*formatted_str == '%')
 	{
 		return (printed_chars + _putchar('%'));

@@ -125,13 +125,16 @@ int print_octal(va_list args)
  * print_binary - write to stdout integer in binary format
  * @args: va_list holds the current parameter of the _printf function,
  *        in this case integer number
+ * @printed_chars: number of printed chars
  * Return: number of printed chars
 */
 int print_binary(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
+	int printed_chars = 0;
 
-	return (print_num(num, 0) + 1);
+	printed_chars += put_num(num, 0);
+	return (printed_chars);
 }
 
 /**

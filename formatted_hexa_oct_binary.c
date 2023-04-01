@@ -77,6 +77,11 @@ int print_s_hex(va_list args)
 		}
 		n = n / 16;
 	}
+	if (i == 0)
+	{
+		str[i] = '0';
+		i++;
+	}
 	for (j = i - 1; j >= 0; j--)
 	{
 		printed_chars += _putchar(str[j]);

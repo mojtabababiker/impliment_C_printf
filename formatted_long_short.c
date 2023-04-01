@@ -11,36 +11,54 @@ int print_long(va_list args, char *format)
 {
 	unsigned long int num;
 	long num2;
+
 	int printed_chars = 0;
 
 	switch (*format)
 	{
-		case 'u':
-			num = va_arg(args, unsigned long int);
-			printed_chars += print_long_unsin(num);
+	case 'u':
+		num = va_arg(args, unsigned long int);
+		printed_chars += print_long_unsin(num, 0);
+		break;
+	case 'o':
+		num = va_arg(args, unsigned long int);
+		printed_chars += print_long_octal(num, 0);
+		break;
+	case 'x':
+		num = va_arg(args, unsigned long int);
+		printed_chars += print_long_s_hex(num, 0);
+		break;
+	case 'X':
+		num = va_arg(args, unsigned long int);
+		printed_chars += print_long_c_hex(num, 0);
+		break;
+	case 'i':
+		num2 = va_arg(args, long int);
+		if (num2 < 0)
+		{
+			printed_chars += _putchar('-');
+			/*num = -num2;*/
+			printed_chars += print_long_num((unsigned)-num2, 0);
 			break;
-		case 'o':
-			num = va_arg(args, unsigned long int);
-			printed_chars += print_long_octal(num);
+		}
+		printed_chars += print_long_num((unsigned)num2, 0);
+		break;
+	case 'd':
+		num2 = va_arg(args, long int);
+		if (num2 < 0)
+		{
+			printed_chars += _putchar('-');
+			/*num = -num2;*/
+			printed_chars += print_long_num((unsigned)-num2, 0);
 			break;
-		case 'x':
-			num = va_arg(args, unsigned long int);
-			printed_chars += print_long_s_hex(num);
-			break;
-		case 'X':
-			num = va_arg(args, unsigned long int);
-			printed_chars += print_long_c_hex(num);
-			break;
-		default:
-			num2 = va_arg(args, long int);
-			if (num2 < 0)
-			{
-				printed_chars += _putchar('-');
-				num2 = -num2;
-			}
-			printed_chars += print_long_num(num2);
-			break;
+		}
+		printed_chars += print_long_num((unsigned)num2, 0);
+		break;
+	default:
+		printed_chars += _putchar('%');
+		return (printed_chars);
 	}
+	++format;
 	return (printed_chars);
 }
 
@@ -54,36 +72,54 @@ int print_long(va_list args, char *format)
 int print_short(va_list args, char *format)
 {
 	unsigned short int num;
-	long num2;
+	short num2;
+
 	int printed_chars = 0;
+
 
 	switch (*format)
 	{
-		case 'u':
-			num = va_arg(args, int);
-			printed_chars += print_short_unsin(num);
+	case 'u':
+		num = va_arg(args, int);
+		printed_chars += print_short_unsin(num, 0);
+		break;
+	case 'o':
+		num = va_arg(args, int);
+		printed_chars += print_short_octal(num, 0);
+		break;
+	case 'x':
+		num = va_arg(args, int);
+		printed_chars += print_short_s_hex(num, 0);
+		break;
+	case 'X':
+		num = va_arg(args, int);
+		printed_chars += print_short_c_hex(num, 0);
+		break;
+	case 'i':
+		num2 = va_arg(args, int);
+		if (num2 < 0)
+		{
+			printed_chars += _putchar('-');
+			/*num = -num2;*/
+			printed_chars += print_short_num((unsigned)-num2, 0);
 			break;
-		case 'o':
-			num = va_arg(args, int);
-			printed_chars += print_short_octal(num);
+		}
+		printed_chars += print_short_num((unsigned)num2, 0);
+		break;
+	case 'd':
+		num2 = va_arg(args, int);
+		if (num2 < 0)
+		{
+			printed_chars += _putchar('-');
+			/*num = -num2;*/
+			printed_chars += print_short_num((unsigned)-num2, 0);
 			break;
-		case 'x':
-			num = va_arg(args, int);
-			printed_chars += print_short_s_hex(num);
-			break;
-		case 'X':
-			num = va_arg(args, int);
-			printed_chars += print_short_c_hex(num);
-			break;
-		default:
-			num2 = va_arg(args, int);
-			if (num2 < 0)
-			{
-				printed_chars += _putchar('-');
-				num2 = -num2;
-			}
-			printed_chars += print_short_num(num2);
-			break;
+		}
+		printed_chars += print_short_num((unsigned)num2, 0);
+		break;
+	default:
+		printed_chars += _putchar('%');
+		return (printed_chars);
 	}
 	++format;
 	return (printed_chars);

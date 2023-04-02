@@ -54,9 +54,6 @@ int print_STR(va_list args)
 		}
 		str++;
 	}
-	prt_chars += _putchar(92);/*forword slach*/
-	prt_chars += _putchar('x');
-	prt_chars += print_short_s_hex((unsigned short)(*str), 0);
 
 	return (prt_chars);
 }

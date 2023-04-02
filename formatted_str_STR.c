@@ -46,6 +46,7 @@ int print_STR(va_list args)
 		{
 			prt_chars += _putchar(92);/*forword slach*/
 			prt_chars += _putchar('x');
+			prt_chars += _putchar('0');
 			prt_chars += print_short_c_hex((unsigned short)(*str), 0);
 		}
 		else

@@ -39,7 +39,7 @@ int print_STR(va_list args)
 	int prt_chars = 0;
 
 	if (str == NULL)
-		str = "(nill)";
+		str = "(null)";
 	while (*str != '\0')
 	{
 		if ((*str > 0 && *str < 32) || *str > 126)
